@@ -1,9 +1,8 @@
-const inquirer = require('inquirer');
-const db = require("./config/db");
+const { prompt } = require("inquirer");
+const db = require("./db");
+require("console.table");
 
-function init() {
-  loadMainPrompts();
-}
+loadMainPrompts();
 
 async function loadMainPrompts() {
   const { choice } = await prompt([

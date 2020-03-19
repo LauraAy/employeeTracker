@@ -1,3 +1,4 @@
+const util = require("util")
 const { createConnection } = require('mysql2')
 
 const connection = createConnection({
@@ -7,5 +8,7 @@ const connection = createConnection({
   password: '',
   database: 'employees_db'
 })
+
+connection.query = util.promisify(connection.query)
 
 module.exports = connection
